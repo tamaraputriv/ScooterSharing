@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.256" />
+        <entry key="app/src/main/res/drawable/ic_baseline_electric_scooter_24.xml" value="0.256" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_edit_ride.xml" value="0.26403985507246375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_scooter_sharing.xml" value="0.25614776611328127" />
+        <entry key="app/src/main/res/layout/activity_start_ride.xml" value="0.26403985507246375" />
+        <entry key="app/src/main/res/layout/camera_ui_container.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/dialog_add_data.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/dialog_add_scooter.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/dialog_start_ride.xml" value="0.1176381299332119" />
+        <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_current_ride.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_edit_ride.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_scooter_charing.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/layout/fragment_scooter_list.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/fragment_scooter_sharing.xml" value="0.3936954988978216" />
+        <entry key="app/src/main/res/layout/fragment_start_ride.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/list_item_ride.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/list_rides.xml" value="0.26403985507246375" />
+        <entry key="app/src/main/res/menu/fragment_scooter_menu.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/menu/top_app_bar.xml" value="0.3098958333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

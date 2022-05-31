@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ScooterSharing</string>
+    <string name="map">Map under construction..</string>
+    <string name="tab_1">List</string>
+    <string name="tab_2">Map</string>
+    <string name="tab_3">Ride</string>
+    <string name="tab_4">Camera</string>
+    <string name="reserve_button">RESERVE</string>
+    <string name="scan_button">SCAN</string>
+    <string name="no_current_ride">You have no current ride..</string>
+    <string name="content_description_add">Add</string>
+    <string name="dialog_add_title">Adding new entry</string>
+    <string name="dialog_add_message">Create a new scooter in the database</string>
+    <string name="dialog_start_ride">Start ride</string>
+    <string name="dialog_scan_qr">Scan QR code on scooter to start ride</string>
+    <string name="dialog_start_ride_button">Start</string>
+    <string name="add_button">Add</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="missing_name">Scooter name is missing</string>
+    <string name="current_scooter">Current scooter model</string>
+    <string name="current_minutes_label">Minutes</string>
+    <string name="current_minutes">No current ride</string>
+    <string name="current_price_label">DKK</string>
+    <string name="current_price">No current price</string>
+    <string name="enter_name">Enter scooter model</string>
+    <string name="enter_color">Enter scooter color</string>
+    <string name="enter_latitude">Enter latitude of location</string>
+    <string name="enter_longitude">Enter longitude of location</string>
+    <string name="missing_location">Scooter location is missing</string>
+    <string name="missing_color">Scooter color is missing</string>
+    <string name="content_description_image">Image</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="camera_shutter">Take picture</string>
+    <string name="camera_back_button">Go back to Scooter Sharing</string>
+    <string
+        name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBSH2r3BW0cpjY29ZHj5jj5X_ynrJkSCJo</string>
+</resources>
