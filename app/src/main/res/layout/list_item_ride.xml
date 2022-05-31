@@ -1,81 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/scooter_card"
+        android:id="@+id/ride_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="10dp"
         android:layout_marginRight="24dp"
         android:layout_marginLeft="24dp"
-        app:cardUseCompatPadding="true"
-        >
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/scooter_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center|left"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="2dp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="@string/missing_name"/>
-
-            <TextView
-                android:id="@+id/scooter_where"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center_vertical|bottom"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:text="@string/missing_location"/>
-
-            <TextView
-                android:id="@+id/scooter_color"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center_vertical|bottom"
-                android:textColor="@android:color/black"
-                android:textSize="11sp"
-                android:textStyle="italic"
-                android:text="@string/missing_color"/>
-
-            <ImageView
-                android:id="@+id/scooter_imageview"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/ic_baseline_electric_scooter_24"
-                android:contentDescription="@string/content_description_image" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/reserve_button"
+                <TextView
+                    android:id="@+id/ride_list_scooter_model_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/reserve_button"
-                    android:textSize="14sp" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:paddingRight="20dp"
+                    android:text="@string/scooter_model"/>
+
+                <TextView
+                    android:id="@+id/ride_list_scooter_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="@string/no_current_ride"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ride_started_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:text="@string/current_start_label"/>
+
+                <TextView
+                    android:id="@+id/ride_ended_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_marginStart="70dp"
+                    android:text="@string/end_label"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ride_started"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:text="@string/current_start_label"/>
+
+                <TextView
+                    android:id="@+id/ride_ended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_marginStart="70dp"
+                    android:text="@string/end_label"/>
 
             </LinearLayout>
 
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

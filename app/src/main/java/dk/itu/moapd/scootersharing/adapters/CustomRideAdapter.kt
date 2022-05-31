@@ -13,44 +13,36 @@ import com.google.firebase.storage.ktx.storage
 import dk.itu.moapd.scootersharing.BUCKET_URL
 import dk.itu.moapd.scootersharing.GlideApp
 import dk.itu.moapd.scootersharing.R
+import dk.itu.moapd.scootersharing.database.Ride
 import dk.itu.moapd.scootersharing.database.Scooter
 import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
 
-class CustomAdapter(private val itemClickListener: ItemClickListener, options: FirebaseRecyclerOptions<Scooter>):
-    FirebaseRecyclerAdapter<Scooter, CustomAdapter.ViewHolder>(options) {
+class CustomRideAdapter(options: FirebaseRecyclerOptions<Ride>):
+    FirebaseRecyclerAdapter<Ride, CustomRideAdapter.ViewHolder>(options) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val modelView: TextView = view.findViewById(R.id.scooter_name)
-        val locationView: TextView = view.findViewById(R.id.scooter_where)
-        val colorView: TextView = view.findViewById(R.id.scooter_color)
-        val imageView: ImageView = view.findViewById(R.id.scooter_imageview)
+        val modelView: TextView = view.findViewById(R.id.ride_list_scooter_model)
+        val rideStartView: TextView = view.findViewById(R.id.ride_started)
+        val rideEndView: TextView = view.findViewById(R.id.ride_ended)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_scooter, parent, false)
+            .inflate(R.layout.list_item_ride, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int, scooter: Scooter) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int, ride: Ride) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         //Log.i(TAG(), "Populate an item at position: $position")
 
-        val storage = Firebase.storage(BUCKET_URL)
-        val imageRef = storage.reference.child("scooters/${scooter.color}Scooter.jpg")
-
-        GlideApp.with(holder.itemView.context)
-            .load(imageRef)
-            .into(holder.imageView)
-
         // Bind the view holder with the selected `String` data.
         holder.apply {
-            modelView.text = scooter.model
-            locationView.text = scooter.location
-            colorView.text = scooter.color
+            modelView.text = ride.scooter
+            rideStartView.text = ride.timeStarted
+            rideEndView.text = ride.timeEnded
         }
     }
-
 }

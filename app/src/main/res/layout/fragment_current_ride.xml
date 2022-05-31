@@ -25,13 +25,14 @@
                 android:layout_marginBottom="20dp"
                 android:textSize="25sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:text="@string/current_scooter"/>
 
             <ImageView
                 android:id="@+id/current_scooter_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="20dp"
                 android:src="@drawable/ic_baseline_electric_scooter_24"
                 android:contentDescription="@string/content_description_image" />
 
@@ -42,18 +43,18 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/current_ride_minute_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@string/current_start_label"/>
+
+                <TextView
                     android:id="@+id/current_ride_minutes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="20dp"
                     android:text="@string/current_minutes"/>
-
-                <TextView
-                    android:id="@+id/current_ride_minute_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="20dp"
-                    android:text="@string/current_minutes_label"/>
 
             </LinearLayout>
 
@@ -78,13 +79,30 @@
                     android:text="@string/current_price_label"/>
 
             </LinearLayout>
-            <Button
-                android:id="@+id/current_ride_button"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:text="@string/no_current_ride"/>
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/start_ride_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="20dp"
+                    android:text="@string/start_ride"/>
+
+                <Button
+                    android:id="@+id/end_ride_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="20dp"
+                    android:enabled="false"
+                    android:text="@string/end_ride"/>
+
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -66,7 +66,7 @@ class ListFragment: Fragment(), ItemClickListener {
 
         // Create the search query.
         val query = database.child("scooters")
-            .orderByChild("model")
+            .orderByChild("color")
 
         // A class provide by FirebaseUI to make a query in the database to fetch appropriate data.
         val options = FirebaseRecyclerOptions.Builder<Scooter>()
@@ -94,10 +94,6 @@ class ListFragment: Fragment(), ItemClickListener {
 
         // Define the recycler view layout manager.
         binding.recyclerView.layoutManager = LinearLayoutManager(this.requireContext())
-        binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(this.requireContext(), DividerItemDecoration.VERTICAL)
-        )
-
         binding.recyclerView.adapter = adapter
 
 

@@ -19,11 +19,12 @@
         <entry key="app/src/main/res/layout/fragment_edit_ride.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_ride_list.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/fragment_scooter_charing.xml" value="0.11979166666666667" />
         <entry key="app/src/main/res/layout/fragment_scooter_list.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_scooter_sharing.xml" value="0.3936954988978216" />
         <entry key="app/src/main/res/layout/fragment_start_ride.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/list_item_ride.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/list_item_ride.xml" value="0.22992553710937502" />
         <entry key="app/src/main/res/layout/list_rides.xml" value="0.26403985507246375" />
         <entry key="app/src/main/res/menu/fragment_scooter_menu.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/top_app_bar.xml" value="0.3098958333333333" />

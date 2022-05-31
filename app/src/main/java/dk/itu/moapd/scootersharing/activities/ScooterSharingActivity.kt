@@ -16,10 +16,7 @@ import com.google.android.gms.location.*
 import com.google.android.material.tabs.TabLayout
 import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.databinding.ActivityScooterSharingBinding
-import dk.itu.moapd.scootersharing.fragments.CameraFragment
-import dk.itu.moapd.scootersharing.fragments.CurrentRideFragment
-import dk.itu.moapd.scootersharing.fragments.ListFragment
-import dk.itu.moapd.scootersharing.fragments.MapFragment
+import dk.itu.moapd.scootersharing.fragments.*
 import dk.itu.moapd.scootersharing.viewmodels.ScooterSharingVM
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -71,6 +68,7 @@ class ScooterSharingActivity: AppCompatActivity() {
             viewModel.addFragment(MapFragment())
             viewModel.addFragment(CurrentRideFragment())
             viewModel.addFragment(CameraFragment())
+            viewModel.addFragment(RideListFragment())
             viewModel.setFragment(0)
         }
 

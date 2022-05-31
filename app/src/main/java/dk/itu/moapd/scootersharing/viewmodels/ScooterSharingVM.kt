@@ -80,4 +80,15 @@ class ScooterSharingVM : ViewModel() {
         fragment.value = fragments.elementAt(index)
     }
 
+    private val _currentRide = MutableLiveData<String>("")
+    val currentRide: LiveData<String> = _currentRide
+
+    fun startRideVM(qrcode: String) {
+        _currentRide.value = qrcode
+    }
+
+    fun noCurrentRideSet(): Boolean {
+        return _currentRide.value.isNullOrEmpty()
+    }
+
 }

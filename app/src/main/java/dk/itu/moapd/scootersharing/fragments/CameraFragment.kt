@@ -592,6 +592,7 @@ class CameraFragment : Fragment() {
     private fun startRide(barcode: String) {
         tabManager = requireActivity().findViewById(R.id.tab_layout)
         tabManager.selectTab(tabManager.getTabAt(2))
+        viewModel.startRideVM(barcode)
         viewModel.setFragment(2)
 
     }
