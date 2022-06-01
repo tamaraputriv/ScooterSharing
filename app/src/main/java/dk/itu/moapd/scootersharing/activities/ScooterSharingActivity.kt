@@ -3,7 +3,9 @@ package dk.itu.moapd.scootersharing.activities
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -14,6 +16,11 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.location.*
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
+import dk.itu.moapd.scootersharing.BUCKET_URL
 import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.databinding.ActivityScooterSharingBinding
 import dk.itu.moapd.scootersharing.fragments.*
@@ -28,7 +35,8 @@ const val KEY_EVENT_EXTRA = "key_event_extra"
 
 class ScooterSharingActivity: AppCompatActivity() {
     private lateinit var mainBinding: ActivityScooterSharingBinding
-
+    private lateinit var auth: FirebaseAuth
+    private lateinit var storage: FirebaseStorage
     /**
      * The primary instance for receiving location updates.
      */
@@ -60,6 +68,7 @@ class ScooterSharingActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         mainBinding = ActivityScooterSharingBinding.inflate(layoutInflater)
+        auth = FirebaseAuth.getInstance()
 
         val lastFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
 
@@ -69,6 +78,7 @@ class ScooterSharingActivity: AppCompatActivity() {
             viewModel.addFragment(CurrentRideFragment())
             viewModel.addFragment(CameraFragment())
             viewModel.addFragment(RideListFragment())
+            viewModel.addFragment(UserFragment())
             viewModel.setFragment(0)
         }
 
@@ -91,6 +101,17 @@ class ScooterSharingActivity: AppCompatActivity() {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit()
             activeFragment = fragment
+        }
+
+        mainBinding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.logout -> {
+                    auth.signOut()
+                    startLoginActivity()
+                    true
+                }
+                else -> false
+            }
         }
 
         with(mainBinding) {
@@ -118,6 +139,15 @@ class ScooterSharingActivity: AppCompatActivity() {
         setContentView(view)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        // Check if the user is not logged and redirect her/him to the LoginActivity.
+        if (auth.currentUser == null)
+            startLoginActivity()
+        // Set the user information.
+    }
+
     override fun onResume() {
         super.onResume()
         subscribeToLocationUpdates()
@@ -126,6 +156,12 @@ class ScooterSharingActivity: AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         unsubscribeToLocationUpdates()
+    }
+
+    private fun startLoginActivity() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun startLocationAware() {

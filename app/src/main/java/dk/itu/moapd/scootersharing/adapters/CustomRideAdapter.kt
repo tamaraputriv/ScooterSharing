@@ -16,6 +16,7 @@ import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.database.Ride
 import dk.itu.moapd.scootersharing.database.Scooter
 import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
+import org.w3c.dom.Text
 
 class CustomRideAdapter(options: FirebaseRecyclerOptions<Ride>):
     FirebaseRecyclerAdapter<Ride, CustomRideAdapter.ViewHolder>(options) {
@@ -24,6 +25,9 @@ class CustomRideAdapter(options: FirebaseRecyclerOptions<Ride>):
         val modelView: TextView = view.findViewById(R.id.ride_list_scooter_model)
         val rideStartView: TextView = view.findViewById(R.id.ride_started)
         val rideEndView: TextView = view.findViewById(R.id.ride_ended)
+        val durationView: TextView = view.findViewById(R.id.final_duration)
+        val priceView: TextView = view.findViewById(R.id.final_price)
+        val userView: TextView = view.findViewById(R.id.ride_list_username)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -43,6 +47,9 @@ class CustomRideAdapter(options: FirebaseRecyclerOptions<Ride>):
             modelView.text = ride.scooter
             rideStartView.text = ride.timeStarted
             rideEndView.text = ride.timeEnded
+            durationView.text = ride.duration
+            priceView.text = ride.price
+            userView.text = ride.user
         }
     }
 }
