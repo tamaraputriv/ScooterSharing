@@ -43,6 +43,7 @@ class ScooterSharingActivityTest {
                 isDisplayed()
             )
         )
+        Thread.sleep(700)
         overflowMenuButton.perform(click())
         Thread.sleep(700)
 
@@ -79,6 +80,7 @@ class ScooterSharingActivityTest {
                 withText("Map"),
             )
         )
+        Thread.sleep(700)
 
         mapButton.perform(scrollTo(), click())
 
@@ -95,6 +97,7 @@ class ScooterSharingActivityTest {
                 withText("Ride"),
             )
         )
+        Thread.sleep(700)
 
         rideButton.perform(scrollTo(), click())
 
@@ -132,6 +135,7 @@ class ScooterSharingActivityTest {
                 withText("Camera"),
             )
         )
+        Thread.sleep(700)
 
         cameraButton.perform(scrollTo(), click())
         Thread.sleep(300)
@@ -158,6 +162,7 @@ class ScooterSharingActivityTest {
                 withText("Rides"),
             )
         )
+        Thread.sleep(700)
 
         ridesButton.perform(scrollTo(), click())
         Thread.sleep(300)
@@ -180,6 +185,8 @@ class ScooterSharingActivityTest {
                 withText("User"),
             )
         )
+
+        Thread.sleep(7000)
 
         userButton.perform(scrollTo(), click())
         Thread.sleep(700)
