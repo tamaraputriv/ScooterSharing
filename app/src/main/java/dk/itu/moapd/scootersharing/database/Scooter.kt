@@ -1,14 +1,8 @@
 package dk.itu.moapd.scootersharing.database
 
-import android.location.Location
-import android.media.Image
-import android.net.Uri
 import android.widget.ImageView
-import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.database.Exclude
 import com.google.firebase.database.IgnoreExtraProperties
-import java.net.URI
-import java.net.URL
 
 /**
  * A model class with all parameters to represent a dummy object in the database.

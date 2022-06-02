@@ -31,7 +31,7 @@ class TextValidator(private val view: View) : TextWatcher {
 
         // The email regex pattern.
         private val EMAIL_PATTERN = Pattern.compile(
-            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+            "[a-zA-Z0-9+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
                     "(" +
@@ -61,14 +61,6 @@ class TextValidator(private val view: View) : TextWatcher {
         fun isValidEmail(email: CharSequence): Boolean {
             return EMAIL_PATTERN.matcher(email).matches()
         }
-
-        /**
-         * This method validates the current data from the password `EditText` component.
-         *
-         * @param password The user's password.
-         *
-         * @return A boolean value with the validation result.
-         */
 
     }
 

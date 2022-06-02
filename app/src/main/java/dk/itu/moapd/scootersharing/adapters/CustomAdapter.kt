@@ -14,7 +14,6 @@ import dk.itu.moapd.scootersharing.BUCKET_URL
 import dk.itu.moapd.scootersharing.GlideApp
 import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.database.Scooter
-import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
 
 class CustomAdapter(options: FirebaseRecyclerOptions<Scooter>):
     FirebaseRecyclerAdapter<Scooter, CustomAdapter.ViewHolder>(options) {

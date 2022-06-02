@@ -6,16 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import dk.itu.moapd.scootersharing.BUCKET_URL
-import dk.itu.moapd.scootersharing.GlideApp
 import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.TextValidator
 import dk.itu.moapd.scootersharing.databinding.FragmentUserProfileBinding
-import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class UserFragment : Fragment() {
     private lateinit var binding: FragmentUserProfileBinding
@@ -36,7 +33,7 @@ class UserFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreate(savedInstanceState)
         binding = FragmentUserProfileBinding.inflate(inflater, container, false)
 

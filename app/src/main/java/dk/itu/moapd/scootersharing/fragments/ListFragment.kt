@@ -98,16 +98,6 @@ class ListFragment: Fragment(){
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        //binding = null
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
     /**
      * Building the insert alert dialog using the `MaterialAlertDialogBuilder` instance. This method
      * shows a dialog with a single edit text. The user can type a name and add it to the text file

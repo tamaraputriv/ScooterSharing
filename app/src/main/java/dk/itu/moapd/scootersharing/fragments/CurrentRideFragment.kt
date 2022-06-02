@@ -84,7 +84,7 @@ class CurrentRideFragment: Fragment() {
                 if (viewModel.noCurrentRideSet()) {
                     toast("Use camera to scan QR code and then start ride")
                 } else {
-                    var currentRide = viewModel.currentRide.value
+                    val currentRide = viewModel.currentRide.value
                     startRide(currentRide)
                     endRideButton.isEnabled = true
                     startRideButton.isEnabled = false
@@ -95,7 +95,7 @@ class CurrentRideFragment: Fragment() {
                 if (viewModel.noCurrentRideSet()) {
                     toast("You have not started a ride")
                 } else {
-                    var currentRide = viewModel.currentRide.value
+                    val currentRide = viewModel.currentRide.value
                     endRide(currentRide)
                     endRideButton.isEnabled = false
                     startRideButton.isEnabled = true

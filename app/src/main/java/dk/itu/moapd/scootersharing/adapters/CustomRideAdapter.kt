@@ -3,20 +3,12 @@ package dk.itu.moapd.scootersharing.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
-import dk.itu.moapd.scootersharing.BUCKET_URL
-import dk.itu.moapd.scootersharing.GlideApp
 import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.database.Ride
-import dk.itu.moapd.scootersharing.database.Scooter
-import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
-import org.w3c.dom.Text
 
 class CustomRideAdapter(options: FirebaseRecyclerOptions<Ride>):
     FirebaseRecyclerAdapter<Ride, CustomRideAdapter.ViewHolder>(options) {
