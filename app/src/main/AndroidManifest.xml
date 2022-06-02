@@ -27,10 +27,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBSH2r3BW0cpjY29ZHj5jj5X_ynrJkSCJo" />
         <activity
-            android:name=".activities.CameraActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity

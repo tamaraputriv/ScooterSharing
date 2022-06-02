@@ -30,12 +30,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toFile
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.lifecycleScope
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import androidx.navigation.Navigation
 import androidx.window.WindowManager
 import dk.itu.moapd.scootersharing.activities.KEY_EVENT_ACTION
 import dk.itu.moapd.scootersharing.activities.KEY_EVENT_EXTRA
@@ -49,11 +45,8 @@ import dk.itu.moapd.scootersharing.utils.simulateClick
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.tabs.TabLayout
-import dk.itu.moapd.scootersharing.activities.CameraActivity
 import dk.itu.moapd.scootersharing.utils.QRScanner
 import dk.itu.moapd.scootersharing.viewmodels.ScooterSharingVM
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.io.File
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat

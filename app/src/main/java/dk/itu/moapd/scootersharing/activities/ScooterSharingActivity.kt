@@ -36,7 +36,6 @@ const val KEY_EVENT_EXTRA = "key_event_extra"
 class ScooterSharingActivity: AppCompatActivity() {
     private lateinit var mainBinding: ActivityScooterSharingBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var storage: FirebaseStorage
     /**
      * The primary instance for receiving location updates.
      */

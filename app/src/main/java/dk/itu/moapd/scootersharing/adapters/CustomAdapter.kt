@@ -16,7 +16,7 @@ import dk.itu.moapd.scootersharing.R
 import dk.itu.moapd.scootersharing.database.Scooter
 import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
 
-class CustomAdapter(private val itemClickListener: ItemClickListener, options: FirebaseRecyclerOptions<Scooter>):
+class CustomAdapter(options: FirebaseRecyclerOptions<Scooter>):
     FirebaseRecyclerAdapter<Scooter, CustomAdapter.ViewHolder>(options) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

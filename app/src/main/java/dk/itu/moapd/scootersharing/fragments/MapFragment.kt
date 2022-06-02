@@ -28,7 +28,6 @@ import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import dk.itu.moapd.scootersharing.DATABASE_URL
 import dk.itu.moapd.scootersharing.database.Scooter
-import dk.itu.moapd.scootersharing.viewmodels.ScooterSharingVM
 
 class MapFragment: Fragment(), OnMapsSdkInitializedCallback {
 

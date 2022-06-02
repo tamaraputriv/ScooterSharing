@@ -1,21 +1,14 @@
 package dk.itu.moapd.scootersharing.fragments
 
-import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
-import android.location.Location
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DatabaseReference
@@ -23,16 +16,13 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import dk.itu.moapd.scootersharing.DATABASE_URL
 import dk.itu.moapd.scootersharing.R
-import dk.itu.moapd.scootersharing.activities.CameraActivity
-import dk.itu.moapd.scootersharing.activities.ScooterSharingActivity
 import dk.itu.moapd.scootersharing.adapters.CustomAdapter
 import dk.itu.moapd.scootersharing.database.Scooter
 import dk.itu.moapd.scootersharing.databinding.FragmentListBinding
-import dk.itu.moapd.scootersharing.interfaces.ItemClickListener
 import java.io.IOException
 import java.util.*
 
-class ListFragment: Fragment(), ItemClickListener {
+class ListFragment: Fragment(){
 
     private lateinit var binding: FragmentListBinding
 
@@ -66,7 +56,7 @@ class ListFragment: Fragment(), ItemClickListener {
 
         // Create the search query.
         val query = database.child("scooters")
-            .orderByChild("color")
+            .orderByChild("model")
 
         // A class provide by FirebaseUI to make a query in the database to fetch appropriate data.
         val options = FirebaseRecyclerOptions.Builder<Scooter>()
@@ -75,7 +65,7 @@ class ListFragment: Fragment(), ItemClickListener {
             .build()
 
         // Create the custom adapter to bind a list of dummy objects.
-        adapter = CustomAdapter(this, options)
+        adapter = CustomAdapter(options)
         binding = FragmentListBinding.inflate(layoutInflater)
 
         // Create a MaterialAlertDialogBuilder instance.
@@ -116,18 +106,6 @@ class ListFragment: Fragment(), ItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding) {
-
-        }
-    }
-
-    override fun onItemClickListener(scooter: Scooter, position: Int) {
-        // Inflate Custom alert dialog view
-        customAlertDialogView = LayoutInflater.from(this.requireContext())
-            .inflate(R.layout.dialog_start_ride, binding.root, false)
-
-        // Launching the custom alert dialog
-        launchStartRideDialog(scooter, position)
     }
 
     /**
@@ -170,35 +148,6 @@ class ListFragment: Fragment(), ItemClickListener {
                         .child(scooter.ID!!)
                         .setValue(scooter)
                 }
-
-                dialog.dismiss()
-            }
-            .setNegativeButton(getString(R.string.cancel_button)) { dialog, _ ->
-                dialog.dismiss()
-            }
-            .show()
-    }
-
-    private fun launchStartRideDialog(scooter: Scooter, position: Int) {
-        val textField = customAlertDialogView.findViewById<TextInputLayout>(R.id.name_text_field)
-        textField.editText?.setText(scooter.model)
-
-        materialAlertDialogBuilder.setView(customAlertDialogView)
-            .setTitle(getString(R.string.dialog_start_ride))
-            .setMessage(getString(R.string.dialog_scan_qr))
-            .setPositiveButton(getString(R.string.dialog_start_ride_button)) { dialog, _ ->
-                /*val model = textField.editText?.text.toString()
-                if (model.isNotEmpty()) {
-                    scooter.model = model
-
-                    val adapter = binding.recyclerView.adapter as CustomAdapter
-                    adapter.getRef(position).setValue(scooter)
-                }*/
-
-                val intent = Intent(this.requireActivity(), CameraActivity::class.java)
-                startActivity(intent)
-
-
 
                 dialog.dismiss()
             }

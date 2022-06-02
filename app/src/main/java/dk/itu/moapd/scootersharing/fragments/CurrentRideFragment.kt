@@ -57,6 +57,7 @@ class CurrentRideFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         database = Firebase.database(DATABASE_URL).reference
+        database.keepSynced(true)
         auth = FirebaseAuth.getInstance()
 
         serviceIntent = Intent(context, TimerService::class.java)
